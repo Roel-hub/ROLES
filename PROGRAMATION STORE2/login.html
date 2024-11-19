@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <!-- Enlazamos el archivo CSS -->
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Inicio de Sesión</h2>
+        <form id="loginForm">
+            <input type="text" id="usuario" placeholder="Usuario" required>
+            <input type="password" id="contrasena" placeholder="Contraseña" required>
+            <button type="submit">Iniciar sesión</button>
+        </form>
+        <p id="mensaje" style="color: red;"></p>
+        <a href="#" class="link">¿Olvidaste tu contraseña?</a>
+        <a href="#" class="link">Crear nueva cuenta</a>
+    </div>
+
+    <!-- Enlazamos el archivo JS -->
+    <script src="login.js"></script>
+</body>
+</html>

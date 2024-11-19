@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROGRAMATION STORE</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .logout-button {
+            background-color: #dc3545; /* Rojo */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+            text-decoration: none;
+        }
+        .logout-button:hover {
+            background-color: #c82333; /* Rojo más oscuro */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html"><h1><span>PROGRAMATION</span><br>STORE</h1></a>
+        
+    </header>
+
+    <nav class="navegacion">
+        <a class="navegacion__enlace navegacion__enlace--activo" href="index.html">Tienda</a>
+        <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
+        <a class="navegacion__enlace" href="datatable.html">Datatable</a>
+        <a class="navegacion__enlace" href="carrito.html">
+            <img src="img/shopping-cart.png" alt="Carrito de compras" class="icono-carrito">
+        </a>
+        <button class="boton-cerrar-sesion" onclick="window.location.href='login.html'">Cerrar sesión</button>
+    </nav>
+    
+
+    <main class="contenedor">
+        <div class="grid">
+            <!-- Productos -->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__imagen" src="img/1.jpg" alt="imagen camisa VueJS">
+                    <div class="producto__informacion">
+                        <p class="producto__nombre">VueJS</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+                <button class="agregar-carrito" data-nombre="VueJS" data-precio="25">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__imagen" src="img/2.jpg" alt="imagen camisa AngularJS">
+                    <div class="producto__informacion">
+                        <p class="producto__nombre">AngularJS</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+                <button class="agregar-carrito" data-nombre="AngularJS" data-precio="25">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__imagen" src="img/3.jpg" alt="imagen camisa ReactJS">
+                    <div class="producto__informacion">
+                        <p class="producto__nombre">ReactJS</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+                <button class="agregar-carrito" data-nombre="ReactJS" data-precio="25">Añadir al Carrito</button>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p class="footer__texto">PROGRAMATION Store - Todos los derechos Reservados 2024.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

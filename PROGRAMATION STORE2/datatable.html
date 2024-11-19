@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROGRAMATION STORE</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Incluir el CSS de DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html"><h1><span>PROGRAMATION</span><br>STORE</h1></a>
+    </header>
+ 
+    <nav class="navegacion">
+        <a class="navegacion__enlace navegacion__enlace--activo" href="index.html">Tienda</a>
+        <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
+        <a class="navegacion__enlace" href="datatable.html">Datatable</a>
+        <a class="navegacion__enlace" href="carrito.html">
+            <img src="img/shopping-cart.png" alt="Carrito de compras" class="icono-carrito">
+        </a>
+    </nav>
+
+    <main class="contenedor">
+        <!-- Añadir una tabla para convertirla en DataTable -->
+        <table id="productosTable" class="display">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Marca</th>
+                    <th>Tipo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>VueJS</td>
+                    <td>$25</td>
+                    <td>Adiddas</td>
+                    <td>Camisa</td>
+                </tr>
+                <tr>
+                    <td>AngularJS</td>
+                    <td>$25</td>
+                    <td>Columbia</td>
+                    <td>Camisa</td>
+                </tr>
+                <tr>
+                    <td>ReactJS</td>
+                    <td>$25</td>
+                    <td>Nike</td>
+                    <td>Camisa</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Incluir jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Incluir el JavaScript de DataTables -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <!-- Incluir tu archivo JS -->
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Verificar si hay un usuario almacenado y su rol
+            const usuario = JSON.parse(sessionStorage.getItem("usuario"));
+            if (!usuario || usuario.rol !== "admin") {
+                alert("No tienes acceso a esta página. Debes ser administrador.");
+                window.location.href = "index.html";  // Redirigir a la página de inicio si no es admin
+            } else {
+                // Inicializar DataTable solo si el usuario es admin
+                $('#productosTable').DataTable();
+            }
+        });
+    </script>
+</body>
+</html>

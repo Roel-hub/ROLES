@@ -1,0 +1,456 @@
+:root {
+    --primario: #366AFF;
+    --primarioOscuro: #133493;
+    --secundario: #FFCE00;
+    --secundarioOscuro: rgb(233, 187, 2);
+    --blanco: #FFF;
+    --negro: #000;
+
+    --fuentePrincipal: 'Staatliches', cursive;
+}
+
+span {
+    color: #FFF;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; 
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/** Globales **/
+body {
+    background-color: var(--primario);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+p {
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+a {
+    text-decoration: none;
+}
+img {
+    width: 100%;
+}
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+h1, h2, h3 {
+    text-align: center;
+    color: var(--secundario);
+    font-family: var(--fuentePrincipal);
+}
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3.2rem;
+}
+h3 {
+    font-size: 2.4rem;
+}
+
+/** Header **/
+.header {
+    display: flex;
+    justify-content: center;
+}
+.header__logo {
+    margin: 3rem 0;
+}
+/** Footer **/
+.footer {
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+.footer__texto {
+    font-family: var(--fuentePrincipal);
+    text-align: center;
+    font-size: 2.2rem;
+}
+/** Navegacion **/
+.navegacion {
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem; 
+}
+.navegacion__enlace {
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    font-size: 3rem;
+}
+.navegacion__enlace--activo,
+.navegacion__enlace:hover {
+    color: var(--secundario);
+}
+
+/** Grid **/
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/** Productos **/
+.producto {
+    background-color: var(--primarioOscuro);
+    padding: 1rem;
+    text-align: center;
+}
+
+.producto__nombre {
+    font-size: 4rem;
+}
+.producto__precio {
+    font-size: 2.8rem;
+    color: var(--secundario);
+}
+.producto__nombre,
+.producto__precio {
+    font-family: var(--fuentePrincipal);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/** Graficos **/
+.grafico {
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 1 / 3;
+}
+.grafico--camisas {
+    grid-row: 2 / 3;
+    background-image: url(../img/grafico1.jpg);
+}
+.grafico--node {
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 8 / 9;
+}
+
+@media (min-width: 768px) {
+    .grafico--node {
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
+
+/** Nosotros **/
+.nosotros {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+}
+@media (min-width: 768px) {
+    .nosotros {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+.nosotros__imagen {
+    grid-row: 1 / 2;
+}
+@media (min-width: 768px) {
+    .nosotros__imagen {
+       grid-column: 2 / 3;
+    }
+}
+
+/** Bloques **/
+.bloques {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .bloques {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.bloque {
+    text-align: center;
+}
+
+.bloque__titulo {
+    margin: 0;
+}
+
+/** Pagina del Producto **/
+@media (min-width: 768px) {
+    .camisa {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+.formulario__campo {
+   border: 1rem solid var(--primarioOscuro);
+   background-color: transparent;
+   color: var(--blanco);
+   font-size: 2rem;
+   font-family: Arial, Helvetica, sans-serif;
+   padding: 1rem;
+   appearance: none;
+}
+.formulario__submit {
+    background-color: var(--secundario);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--fuentePrincipal);
+    padding: 2rem;
+    transition: background-color .3s ease;
+    grid-column: 1 / 3;
+}
+.formulario__submit:hover {
+    cursor: pointer;
+    background-color: var(--secundarioOscuro);
+}
+
+/* Estilo para las tablas */
+table.dataTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.dataTable thead th {
+    background-color: var(--primarioOscuro);
+    color: var(--negro);
+    padding: 1rem;
+}
+
+table.dataTable tbody td {
+    padding: 1rem;
+    color: var(--negro);
+}
+
+.icono-carrito {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+/* Estilos para el carrito */
+.carrito-items {
+    background-color: var(--primarioOscuro);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.carrito-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--secundario);
+    color: var(--blanco);
+}
+
+.carrito-item p {
+    margin: 0;
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.carrito-item:last-child {
+    border-bottom: none;
+}
+
+.eliminar-producto {
+    background-color: var(--secundario);
+    color: var(--negro);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    transition: background-color 0.3s ease;
+}
+
+.eliminar-producto:hover {
+    background-color: var(--secundarioOscuro);
+}
+
+/* Estilo para el total del carrito */
+.carrito-total {
+    background-color: var(--primarioOscuro);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: right;
+    font-size: 2.4rem;
+    margin-top: 2rem;
+    color: var(--blanco);
+}
+
+.carrito-total p {
+    margin: 0;
+}
+
+/* Adaptaciones de la navegación y footer */
+.navegacion__enlace {
+    font-size: 2.8rem;
+    padding: 0.5rem;
+}
+
+.footer__texto {
+    font-size: 1.8rem;
+}
+
+.producto:hover {
+    background-color: var(--secundarioOscuro); /* Cambia el color de fondo si es necesario */
+}
+
+.producto:hover .producto__nombre {
+    color: var(--negro); /* Cambia el color del texto a negro */
+}
+
+/** Estilos para los botones de Añadir al Carrito **/
+.agregar-carrito {
+    background-color: var(--secundario);
+    color: var(--negro);
+    border: none;
+    padding: 1rem 2rem; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 2rem; /* Tamaño de texto */
+    font-family: var(--fuentePrincipal);
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones para el color y la transformación */
+}
+
+.agregar-carrito:hover {
+    background-color: var(--secundarioOscuro); /* Color de fondo al pasar el ratón */
+    transform: scale(1.05); /* Agranda ligeramente el botón */
+}
+
+/* Estilos para el botón de cerrar sesión */
+.boton-cerrar-sesion {
+    display: inline-block; /* Para centrarlo si es necesario */
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: #FF4C4C; /* Color de fondo */
+    color: var(--blanco); /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 1.8rem; /* Tamaño de fuente */
+    font-family: var(--fuentePrincipal);
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+    margin: 20px 0; /* Margen superior e inferior */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+    text-align: center; /* Centrar texto */
+}
+
+.boton-cerrar-sesion:hover {
+    background-color: #FF1C1C; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilo para el botón de Vaciar Carrito */
+.vaciar-carrito {
+    display: inline-block; /* Para centrarlo si es necesario */
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: #FF4C4C; /* Color de fondo */
+    color: var(--blanco); /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 1.8rem; /* Tamaño de fuente */
+    font-family: var(--fuentePrincipal);
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+    margin: 20px 0; /* Margen superior e inferior */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+    text-align: center; /* Centrar texto */
+}
+
+.vaciar-carrito:hover {
+    background-color: #FF1C1C; /* Color de fondo al pasar el mouse */
+}
+
+
+/* Estilos para el Login */
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--primario); /* Asegura que tenga un fondo coherente */
+}
+
+.login__form {
+    background-color: var(--primarioOscuro);
+    padding: 3rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.login__titulo {
+    text-align: center;
+    font-size: 3.2rem;
+    color: var(--secundario);
+    font-family: var(--fuentePrincipal);
+    margin-bottom: 2rem;
+}
+
+.login__campo {
+    width: 100%;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    background-color: var(--blanco);
+    border: 1px solid var(--secundarioOscuro);
+    border-radius: 5px;
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--negro);
+}
+
+.login__submit {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 2rem;
+    background-color: var(--secundario);
+    color: var(--negro);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--fuentePrincipal);
+    transition: background-color 0.3s ease;
+}
+
+.login__submit:hover {
+    background-color: var(--secundarioOscuro);
+}
+
+/* Adaptaciones en dispositivos móviles */
+@media (max-width: 768px) {
+    .login__form {
+        width: 90%;
+        padding: 2rem;
+    }
+
+    .login__titulo {
+        font-size: 2.8rem;
+    }
+}
